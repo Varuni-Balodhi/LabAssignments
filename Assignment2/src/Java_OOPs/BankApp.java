@@ -8,7 +8,6 @@ public static void main(String[] args) {
             "SA101",
             10000
     );
-
     sa.deposit(2000);
     System.out.println("Balance with interest: ₹" + sa.getBalance());
     sa.withdraw(3000);

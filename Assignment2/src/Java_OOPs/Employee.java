@@ -1,7 +1,6 @@
 package Java_OOPs;
-import java.util.*;
 
-public abstract class Employee {
+public abstract class Employee implements Payable {
 
     protected String name;
     protected int employeeId;
@@ -11,16 +10,7 @@ public abstract class Employee {
         this.employeeId = employeeId;
     }
 
-    // Abstract method to be overridden
-    public abstract double getPayment();
-
-    // Common display method
-    public void displayPayment() {
-        System.out.println(
-            "Employee ID: " + employeeId +
-            ", Name: " + name +
-            ", Weekly Salary: ₹" + getPayment()
-        );
+    public String getDetails() {
+        return "Employee ID: " + employeeId + ", Name: " + name;
     }
 }
-
