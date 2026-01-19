@@ -1,0 +1,11 @@
+package Java_OOPs;
+
+public class BookStore extends Book {
+ int[] books=new int[10];
+ BookStore(int[] books,String bookTitle,String author,String isbn,int numOfCopies) {
+	 super(bookTitle,author,isbn,numOfCopies);
+	 this.books=books;
+ }
+ 
+ 
+}

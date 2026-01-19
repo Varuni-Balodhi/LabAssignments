@@ -1,0 +1,19 @@
+package Java_OOPs;
+
+public class Account {
+private String name;
+private double accountNumber;
+private double accountBalance;
+public String getName() {
+	return name;
+}
+public double getAccNum() {
+	return accountNumber;
+}
+public double getAccBal() {
+	return accountBalance;
+}
+public void deposit(double amount) {
+	
+}
+}

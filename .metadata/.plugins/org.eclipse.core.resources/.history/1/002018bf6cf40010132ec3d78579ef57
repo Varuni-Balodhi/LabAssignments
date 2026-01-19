@@ -1,0 +1,27 @@
+package Java_OOPs;
+
+public class BookStore{
+ private Book[] books=new Book[10];
+ private int count;
+ BookStore(){
+	 books=new Book[10];
+	 count=0;
+ }
+ public void sell(String title,int qty) {
+	 for(int i=0;i<count;i++) {
+		 if(books[i].getTitle().equalsIgnoreCase(title)) {
+			 if(removeCopies(qty)) {
+				 System.out.println("Book sold succesfully");
+			 }else {
+				 System.out.println("Not enough Stock");
+			 }
+		 }
+		 else {
+			 System.out.println("Book not found");
+		 }
+	 }
+ }
+ public void order(String isbn,int qty) {
+	 
+ }
+}

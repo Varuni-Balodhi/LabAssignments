@@ -1,0 +1,31 @@
+package Java_OOPs;
+
+public class BankApp {
+public static void main(String[] args) {
+	System.out.println("=== Savings Account ===");
+    SavingsAccount sa = new SavingsAccount(
+            "Varuni",
+            "SA101",
+            10000
+    );
+
+    sa.deposit(2000);
+    System.out.println("Balance with interest: ₹" + sa.getBalance());
+    sa.withdraw(3000);
+    System.out.println("Actual balance: ₹" + sa.getAccBal());
+    sa.withdraw(6000); // should fail (min balance)
+    System.out.println("\n=== Current Account ===");
+    CurrentAccount ca = new CurrentAccount(
+            "Varuni",
+            "CA201",
+            5000,
+            "TL12345",
+            10000
+    );
+
+    ca.deposit(2000);
+    ca.withdraw(12000); // overdraft allowed
+    System.out.println("Current balance: ₹" + ca.getBalance());
+    ca.withdraw(5000); // exceeds overdraft
+}
+}

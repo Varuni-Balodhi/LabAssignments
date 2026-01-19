@@ -1,0 +1,36 @@
+package Java_OOPs;
+
+public class Book {
+private String bookTitle;
+private String author;
+private String isbn;
+int numOfCopies;
+Book(String bookTitle,String author,String isbn,int numOfCopies){
+	this.bookTitle=bookTitle;
+	this.author=author;
+	this.isbn=isbn;
+	this.numOfCopies=numOfCopies;
+	if(numOfCopies<0) {
+		throw new IllegalArgumentException("Number of copies cannot be negetive");
+	}
+}
+public String getISBN() {
+	return isbn;
+}
+public String getauthor() {
+	return author;
+}
+public String getTitle() {
+	return bookTitle;
+}
+public int getCopies() {
+	return numOfCopies;
+}
+public int addCopies() {
+	
+}
+//Title – Author – ISBN – Quantity
+public void display() {
+	System.out.println(bookTitle+"-"+author+"-"+isbn+"-"+numOfCopies);
+  }
+}

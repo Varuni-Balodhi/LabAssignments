@@ -1,0 +1,8 @@
+package Java_OOPs;
+import java.util.*;
+public class BookStoreApp {
+public static void main(String[] args) {
+	BookStore store=new BookStore();
+	
+}
+}

@@ -1,0 +1,13 @@
+package Java_OOPs;
+
+public class SavingsAccount extends Account{
+ private final double interest=5;
+ public SavingsAccount(String name, String accNo, double accountbalance) {
+     super(name, accNo, accountbalance);
+ }
+ public double getBalance() {
+	 double balance=getAccBal();
+     return balance + (balance * interest / 100);
+ }
+
+}

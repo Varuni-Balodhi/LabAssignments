@@ -1,0 +1,24 @@
+package Java_OOPs;
+import java.util.*;
+public class BookStoreApp {
+public static void main(String[] args) {
+	BookStore store=new BookStore();
+	System.out.println("Adding sample books");
+	store.order("ABC123",5);
+	store.order("BHG456", 4);
+	store.order("UIJHK2", 1);
+	store.display();
+	System.out.println("Ordering the existing book");
+	store.order("ABC123", 3);
+	store.order("BHG456",2);
+	store.display();
+	System.out.println("Sell the books");
+	store.sell("UIJHK2", 1);
+	store.display();
+	System.out.println("Selling a book that is not available");
+	store.sell("HeadFirst", 1);
+	store.display();
+	System.out.println("Selling more than the available");
+	store.sell("BHG456", 20);
+}
+}
