@@ -1,7 +1,0 @@
-package Java_OOPs;
-
-public class BookStore extends Book {
- int[] books=new int[10];
- 
- 
-}

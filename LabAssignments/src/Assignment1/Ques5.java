@@ -1,0 +1,48 @@
+package Assignment1;
+
+import java.util.Scanner;
+public class Ques5 {
+    public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int days,month,year;
+	int DaysInMonth=0;
+	System.out.println("Enter the day");
+	days=sc.nextInt();
+	System.out.println("Enter the month");
+	month=sc.nextInt();
+	System.out.println("Enter the year");
+	year=sc.nextInt();
+	if(month<1||month>12) {
+		System.out.println("Invalid Date");
+		return;
+	}
+	switch(month) {
+	case 1:case 3: case 5: case 7: case 8: case 10: case 12:
+		DaysInMonth=31;
+		break;
+	case 2:
+		DaysInMonth=(isLeap(year))?29:28;
+		break;
+	case 4:case 6:case 9:case 11:
+		DaysInMonth=30;
+		break;
+ }
+	if(days<1||days>DaysInMonth) {
+		System.out.println("Invalid Date");
+	}
+	System.out.println("Today:"+days+"/"+month+"/"+year);
+	days++;
+	if(days>DaysInMonth) {
+		days=1;
+		month++;
+		if(month>12) {
+			month=1;
+			year++;
+		}
+	}
+	System.out.println("Next:"+days+"/"+month+"/"+year);
+}	
+public static boolean isLeap(int year) {
+	return ((year%4==0&&year%100!=0)||(year%400==0));
+}
+}

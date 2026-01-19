@@ -1,8 +1,0 @@
-package Java_OOPs;
-
-public class SavingsAccount extends Account{
- private final double interest=5;
- public SavingsAccount(String name, String accNo, double balance) {
-     super(name, accNo, balance);
- }
-}
