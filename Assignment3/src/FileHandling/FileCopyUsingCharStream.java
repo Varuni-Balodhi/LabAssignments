@@ -1,4 +1,5 @@
 package FileHandling;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,35 +9,26 @@ public class FileCopyUsingCharStream {
 
     public static void main(String[] args) {
 
-        File sourceFile = new File("source");   // text file
-        File destFile = new File("Copy_Char");
+        File sourceFile = new File("source.txt");   // source file
+        File destFile = new File("Copy_Char.txt");  // destination file
 
-        FileReader reader = null;
-        FileWriter writer = null;
-
-        try {
-            reader = new FileReader(sourceFile);
-            writer = new FileWriter(destFile);
+        try (FileReader reader = new FileReader(sourceFile);
+             FileWriter writer = new FileWriter(destFile)) {
 
             int ch;
             while ((ch = reader.read()) != -1) {
                 writer.write(ch);
             }
 
-            System.out.println("File copied using character streams.");
+            // flush is implicit here, but safe to call explicitly
+            writer.flush();
 
+            System.out.println("File copied using character streams.");
             System.out.println("Source file size : " + sourceFile.length());
             System.out.println("Copied file size : " + destFile.length());
 
         } catch (IOException e) {
             System.out.println("Error occurred: " + e.getMessage());
-        } finally {
-            try {
-                if (reader != null) reader.close();
-                if (writer != null) writer.close();
-            } catch (IOException e) {
-                System.out.println("Error closing file.");
-            }
         }
     }
 }
