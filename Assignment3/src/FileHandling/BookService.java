@@ -4,7 +4,6 @@ import java.util.LinkedList;
 public class BookService {
     LinkedList<Book> bookList = new LinkedList<>();
     public void loadBooks(String fileName) {
-
         try (BufferedReader br =
                      new BufferedReader(new FileReader(fileName))) {
 
